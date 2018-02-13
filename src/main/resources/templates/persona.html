@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+
+	<div class="jumbotron text-center">
+		<div class="container">
+			<a href="/" class="lang-logo"> <img src="/lang-logo.png">
+			</a>
+			<h1>Real State Form</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="alert alert-info text-center" role="alert"></div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+
+				<form action="#" th:action="@{/persona}" th:object="${persona}"
+					method="GET">
+					<div class="form-group">
+					<label th:text="#{persona.nombre}" />
+						 <input type="text"	th:field="*{nombre}" />
+					</div>
+				
+
+					<p>
+						<input type="submit" value="Submit" /> <input type="reset"
+							value="Reset" />
+					</p>
+				</form>
+			</div>
+		</div>
+		<!-- row -->
+		<div class="alert alert-info text-center" role="alert"></div>
+	</div>
+
+</body>
+</html>

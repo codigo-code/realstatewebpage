@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{fragments/layout :: layout (~{::body},'index')}">
+
+<body>
+
+	<div class="jumbotron text-center">
+		<div class="container">
+			<a href="/" class="lang-logo"> <img src="/lang-logo.png">
+			</a>
+			<h1>Real State Form</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="alert alert-info text-center" role="alert"></div>
+		<hr>
+		<div class="row">
+			<div class="col-md-12">
+
+				<form action="#" th:action="@{/RealStateForm}" th:object="${realStateForm}"
+					method="GET">
+					<div class="form-group">
+						<label th:text="Imagen" />
+						 <input type="file"	th:field="*{reference}" />
+					</div>
+					<div class="form-group">
+						<label th:text="Calle" />
+						 <input type="text"
+							th:field="*{onStreet}" />
+					</div>
+
+					<div class="form-group">
+						<label th:text="Calle" />
+												 <input type="text"
+							th:field="*{Streetnumber}" />
+					</div>
+
+
+					<div class="form-group">
+						<label th:text="Entre " />
+						<input type="text"
+							th:field="*{onStreetbtwone}" />
+
+					</div>
+
+
+					<div class="form-group">
+
+						<label th:text="Estado" />
+						 <input type="text"
+							th:field="*{status}" />
+					</div>
+
+					<div class="form-group">
+<!-- 						<label th:text="#{msg.mcc" /> -->
+						 <input type="text"
+							th:field="*{mcc}" />
+					</div>
+
+					<div class="form-group">
+<!-- 						<label th:text="#{msg.mcd" /> -->
+						 <input type="text"
+							th:field="*{mcd}" />
+					</div>
+
+					<div class="form-group">
+<!-- 						<label th:text="#{msg.garage" />  -->
+						<input type="text"
+							th:field="*{garage}" />
+					</div>
+
+					<div class="form-group">
+<!-- 						<label th:text="#{msg.canttoilette"/>  -->
+						<input type="number"
+							th:field="*{canttoilette}" placeholder="Cantidad de baños"/>
+					</div>
+
+					<div class="form-group">
+<!-- 						<label th:text="#{msg.garaberoof" />  -->
+						<input type="text"	th:field="*{garaberoof}" />
+					</div>
+				
+				
+			
+					<p>
+						<input type="submit" value="Submit" /> <input type="reset"
+							value="Reset" />
+					</p>
+				</form>
+			</div>
+		</div>
+		<!-- row -->
+		<div class="alert alert-info text-center" role="alert"></div>
+	</div>
+
+</body>
+</html>
